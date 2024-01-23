@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+
+<body>
+    <h1>Pratham Chaudhary</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+
+    let intervalId;
+    const sayDate = function () {
+        console.log("Pratham", Date.now());
+    }
+    // const intervalId = setInterval( sayDate , 1000)
+
+    document.querySelector('#start').addEventListener('click', function (e) {
+        // console.log(e);
+        if (!intervalId) {
+            intervalId = setInterval(sayDate, 1000);
+        }
+    });
+
+    document.querySelector('#stop').addEventListener('click', function (e) {
+        if (intervalId) {
+            clearInterval(intervalId);
+            intervalId = undefined;
+            console.log(stopped);
+        }
+    });
+
+</script>
+
+</html>
